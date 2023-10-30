@@ -16,7 +16,7 @@ namespace Pi_NAS_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pi_NAS_Manager());
+            Application.Run(new SSH_Login());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Pi_NAS_Manager
 {
-    partial class Snippets_Manager
+    partial class Pi_NAS_Manager
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Snippets_Manager
+            // Pi_NAS_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 401);
-            this.Name = "Snippets_Manager";
-            this.Text = "Snippets_Manager";
+            this.ClientSize = new System.Drawing.Size(696, 389);
+            this.Name = "Pi_NAS_Manager";
+            this.Text = "Pi_NAS_Manager";
             this.ResumeLayout(false);
 
         }
