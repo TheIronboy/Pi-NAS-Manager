@@ -16,5 +16,15 @@ namespace Pi_NAS_Manager
         {
             InitializeComponent();
         }
+
+        private void SSH_Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\bin\Debug\Pi_NAS_Manager.exe.config
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\bin\Debug\Pi_NAS_Manager.exe
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\bin\Debug\Pi_NAS_Manager.pdb
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.csproj.AssemblyReference.cache
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.Pi_NAS_Manager.resources
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.Properties.Resources.resources
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.Snippets_Manager.resources
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.SSH_Login.resources
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.csproj.GenerateResource.cache
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.csproj.CoreCompileInputs.cache
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.exe
+C:\Users\giord\Source\Repos\TheIronboy\Pi-NAS-Manager\obj\Debug\Pi_NAS_Manager.pdb
