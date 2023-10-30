@@ -46,14 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Pi_NAS_Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Pi_NAS_Manager.Designer.cs">
+      <DependentUpon>Pi_NAS_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Snippets_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Snippets_Manager.Designer.cs">
+      <DependentUpon>Snippets_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SSH_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SSH_Login.Designer.cs">
+      <DependentUpon>SSH_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pi_NAS_Manager.resx">
+      <DependentUpon>Pi_NAS_Manager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +78,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Snippets_Manager.resx">
+      <DependentUpon>Snippets_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SSH_Login.resx">
+      <DependentUpon>SSH_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
