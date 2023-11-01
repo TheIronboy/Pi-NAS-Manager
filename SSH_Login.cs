@@ -1,15 +1,9 @@
 ﻿using Renci.SshNet;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.IO;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 
 namespace Pi_NAS_Manager
 {
@@ -20,19 +14,70 @@ namespace Pi_NAS_Manager
             InitializeComponent();
         }
 
+        string sessionFilePath = "session.txt";
+
         private void SSH_Login_Load(object sender, EventArgs e)
         {
+            if (File.Exists(sessionFilePath))
+            {
+                StreamReader sr = File.OpenText(sessionFilePath);
 
+                string lastSessionData = sr.ReadToEnd();
+                sr.Close();
+
+                User lastUser = JsonSerializer.Deserialize<User>(JsonDocument.Parse(lastSessionData));
+
+                textBox_ip.Text = lastUser.IP;
+                textBox_username.Text = lastUser.Username;
+                textBox_password.Text = lastUser.Password;
+                checkBox_remember.Checked = lastUser.Remember;
+            }
         }
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            User user = new User(textBox_ip.Text, textBox_username.Text, textBox_password.Text, checkBox_remember.Checked);
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    if (textBox.Text == "")
+                    {
+                        MessageBox.Show("Riempi tutti i campi.");
+                        return;
+                    }
+                }
+            }
 
-            SshClient sshClient = new SshClient(user.IP, user.Username, user.Password);
-            sshClient.Connect();
+            User currentUser = new User(textBox_ip.Text, textBox_username.Text, textBox_password.Text, checkBox_remember.Checked);
 
-            MessageBox.Show(user.toJSON() + Environment.NewLine + "IS CONNECTED: " + sshClient.IsConnected.ToString());
+            SshClient sshClient = new SshClient(currentUser.IP, currentUser.Username, currentUser.Password);
+
+            if (checkBox_remember.Checked)
+            {
+                StreamWriter sw = File.CreateText(sessionFilePath);
+
+                sw.WriteLine(JsonSerializer.Serialize(currentUser));
+                sw.Close();
+            }
+            else
+                File.Delete(sessionFilePath);
+
+            try
+            {
+                sshClient.Connect();
+
+                Pi_NAS_Manager Pi_NAS_Manager = new Pi_NAS_Manager();
+
+                Pi_NAS_Manager.currentUser = currentUser;
+                Pi_NAS_Manager.sshClient = sshClient;
+
+                Pi_NAS_Manager.Show();
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRORE: " + ex.Message);
+            }
         }
     }
 }

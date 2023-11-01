@@ -6,11 +6,10 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Pi_NAS_Manager
 {
-    internal class User
+    public class User
     {
         public string IP { get; set; }
 
@@ -28,16 +27,6 @@ namespace Pi_NAS_Manager
             Password = password;
 
             Remember = remember;
-        }
-
-        public string toJSON()
-        {
-            return JsonSerializer.Serialize(this);
-        }
-
-        public void setDataFromJSON()
-        {
-            //here man
         }
     }
 }

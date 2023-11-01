@@ -40,54 +40,58 @@
             // 
             // textBox_ip
             // 
-            this.textBox_ip.Location = new System.Drawing.Point(76, 12);
+            this.textBox_ip.Location = new System.Drawing.Point(101, 15);
+            this.textBox_ip.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_ip.Name = "textBox_ip";
-            this.textBox_ip.Size = new System.Drawing.Size(175, 20);
-            this.textBox_ip.TabIndex = 0;
-            this.textBox_ip.Text = "192.168.1.80";
+            this.textBox_ip.Size = new System.Drawing.Size(232, 22);
+            this.textBox_ip.TabIndex = 1;
             // 
             // label_ip
             // 
             this.label_ip.AutoSize = true;
-            this.label_ip.Location = new System.Drawing.Point(12, 15);
+            this.label_ip.Location = new System.Drawing.Point(16, 18);
+            this.label_ip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_ip.Name = "label_ip";
-            this.label_ip.Size = new System.Drawing.Size(20, 13);
-            this.label_ip.TabIndex = 1;
+            this.label_ip.Size = new System.Drawing.Size(22, 16);
+            this.label_ip.TabIndex = 0;
             this.label_ip.Text = "IP:";
             // 
             // label_username
             // 
             this.label_username.AutoSize = true;
-            this.label_username.Location = new System.Drawing.Point(12, 41);
+            this.label_username.Location = new System.Drawing.Point(16, 50);
+            this.label_username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_username.Name = "label_username";
-            this.label_username.Size = new System.Drawing.Size(58, 13);
-            this.label_username.TabIndex = 3;
+            this.label_username.Size = new System.Drawing.Size(73, 16);
+            this.label_username.TabIndex = 2;
             this.label_username.Text = "Username:";
             // 
             // textBox_username
             // 
-            this.textBox_username.Location = new System.Drawing.Point(76, 38);
+            this.textBox_username.Location = new System.Drawing.Point(101, 47);
+            this.textBox_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_username.Name = "textBox_username";
-            this.textBox_username.Size = new System.Drawing.Size(175, 20);
-            this.textBox_username.TabIndex = 2;
-            this.textBox_username.Text = "theironboy";
+            this.textBox_username.Size = new System.Drawing.Size(232, 22);
+            this.textBox_username.TabIndex = 3;
             // 
             // checkBox_remember
             // 
             this.checkBox_remember.AutoSize = true;
-            this.checkBox_remember.Location = new System.Drawing.Point(15, 94);
+            this.checkBox_remember.Location = new System.Drawing.Point(20, 116);
+            this.checkBox_remember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox_remember.Name = "checkBox_remember";
-            this.checkBox_remember.Size = new System.Drawing.Size(133, 17);
-            this.checkBox_remember.TabIndex = 4;
+            this.checkBox_remember.Size = new System.Drawing.Size(162, 20);
+            this.checkBox_remember.TabIndex = 6;
             this.checkBox_remember.Text = "Remember connection";
             this.checkBox_remember.UseVisualStyleBackColor = true;
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(257, 90);
+            this.button_login.Location = new System.Drawing.Point(205, 111);
+            this.button_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(94, 23);
-            this.button_login.TabIndex = 5;
+            this.button_login.Size = new System.Drawing.Size(129, 28);
+            this.button_login.TabIndex = 7;
             this.button_login.Text = "Login";
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
@@ -95,26 +99,27 @@
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(12, 67);
+            this.label_password.Location = new System.Drawing.Point(16, 82);
+            this.label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(56, 13);
-            this.label_password.TabIndex = 7;
+            this.label_password.Size = new System.Drawing.Size(70, 16);
+            this.label_password.TabIndex = 4;
             this.label_password.Text = "Password:";
             // 
             // textBox_password
             // 
-            this.textBox_password.Location = new System.Drawing.Point(76, 64);
+            this.textBox_password.Location = new System.Drawing.Point(101, 79);
+            this.textBox_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.PasswordChar = '*';
-            this.textBox_password.Size = new System.Drawing.Size(175, 20);
-            this.textBox_password.TabIndex = 6;
-            this.textBox_password.Text = "18082004";
+            this.textBox_password.Size = new System.Drawing.Size(232, 22);
+            this.textBox_password.TabIndex = 5;
             // 
             // SSH_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 121);
+            this.ClientSize = new System.Drawing.Size(351, 149);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.button_login);
@@ -123,11 +128,13 @@
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.label_ip);
             this.Controls.Add(this.textBox_ip);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SSH_Login";
-            this.Text = "SSH_Login";
+            this.Text = "Login to SSH Server";
             this.Load += new System.EventHandler(this.SSH_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

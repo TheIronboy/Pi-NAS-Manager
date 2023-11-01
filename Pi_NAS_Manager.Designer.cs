@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(696, 389);
             this.Name = "Pi_NAS_Manager";
             this.Text = "Pi_NAS_Manager";
+            this.Load += new System.EventHandler(this.Pi_NAS_Manager_Load);
             this.ResumeLayout(false);
 
         }
