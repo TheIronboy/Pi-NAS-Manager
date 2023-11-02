@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox_CPU = new System.Windows.Forms.GroupBox();
-            this.groupBox_RAM = new System.Windows.Forms.GroupBox();
-            this.progressBar_CPU = new System.Windows.Forms.ProgressBar();
-            this.progressBar_RAM = new System.Windows.Forms.ProgressBar();
             this.label_CPU = new System.Windows.Forms.Label();
+            this.progressBar_CPU = new System.Windows.Forms.ProgressBar();
+            this.groupBox_RAM = new System.Windows.Forms.GroupBox();
             this.label_RAM = new System.Windows.Forms.Label();
+            this.progressBar_RAM = new System.Windows.Forms.ProgressBar();
             this.label_refresh = new System.Windows.Forms.Label();
             this.numericUpDown_refresh = new System.Windows.Forms.NumericUpDown();
+            this.label_loggedUser = new System.Windows.Forms.Label();
             this.groupBox_CPU.SuspendLayout();
             this.groupBox_RAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_refresh)).BeginInit();
@@ -52,6 +53,23 @@
             this.groupBox_CPU.TabStop = false;
             this.groupBox_CPU.Text = "CPU";
             // 
+            // label_CPU
+            // 
+            this.label_CPU.AutoSize = true;
+            this.label_CPU.Location = new System.Drawing.Point(6, 24);
+            this.label_CPU.Name = "label_CPU";
+            this.label_CPU.Size = new System.Drawing.Size(33, 13);
+            this.label_CPU.TabIndex = 1;
+            this.label_CPU.Text = "100%";
+            // 
+            // progressBar_CPU
+            // 
+            this.progressBar_CPU.Location = new System.Drawing.Point(41, 19);
+            this.progressBar_CPU.Name = "progressBar_CPU";
+            this.progressBar_CPU.Size = new System.Drawing.Size(107, 23);
+            this.progressBar_CPU.Step = 1;
+            this.progressBar_CPU.TabIndex = 2;
+            // 
             // groupBox_RAM
             // 
             this.groupBox_RAM.Controls.Add(this.label_RAM);
@@ -63,31 +81,6 @@
             this.groupBox_RAM.TabStop = false;
             this.groupBox_RAM.Text = "RAM";
             // 
-            // progressBar_CPU
-            // 
-            this.progressBar_CPU.Location = new System.Drawing.Point(41, 19);
-            this.progressBar_CPU.Name = "progressBar_CPU";
-            this.progressBar_CPU.Size = new System.Drawing.Size(107, 23);
-            this.progressBar_CPU.Step = 1;
-            this.progressBar_CPU.TabIndex = 2;
-            // 
-            // progressBar_RAM
-            // 
-            this.progressBar_RAM.Location = new System.Drawing.Point(41, 19);
-            this.progressBar_RAM.Name = "progressBar_RAM";
-            this.progressBar_RAM.Size = new System.Drawing.Size(107, 23);
-            this.progressBar_RAM.Step = 1;
-            this.progressBar_RAM.TabIndex = 5;
-            // 
-            // label_CPU
-            // 
-            this.label_CPU.AutoSize = true;
-            this.label_CPU.Location = new System.Drawing.Point(6, 24);
-            this.label_CPU.Name = "label_CPU";
-            this.label_CPU.Size = new System.Drawing.Size(33, 13);
-            this.label_CPU.TabIndex = 1;
-            this.label_CPU.Text = "100%";
-            // 
             // label_RAM
             // 
             this.label_RAM.AutoSize = true;
@@ -96,6 +89,14 @@
             this.label_RAM.Size = new System.Drawing.Size(33, 13);
             this.label_RAM.TabIndex = 4;
             this.label_RAM.Text = "100%";
+            // 
+            // progressBar_RAM
+            // 
+            this.progressBar_RAM.Location = new System.Drawing.Point(41, 19);
+            this.progressBar_RAM.Name = "progressBar_RAM";
+            this.progressBar_RAM.Size = new System.Drawing.Size(107, 23);
+            this.progressBar_RAM.Step = 1;
+            this.progressBar_RAM.TabIndex = 5;
             // 
             // label_refresh
             // 
@@ -128,11 +129,21 @@
             0,
             0});
             // 
+            // label_loggedUser
+            // 
+            this.label_loggedUser.AutoSize = true;
+            this.label_loggedUser.Location = new System.Drawing.Point(332, 41);
+            this.label_loggedUser.Name = "label_loggedUser";
+            this.label_loggedUser.Size = new System.Drawing.Size(63, 13);
+            this.label_loggedUser.TabIndex = 8;
+            this.label_loggedUser.Text = "Logged as: ";
+            // 
             // Pi_NAS_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 72);
+            this.Controls.Add(this.label_loggedUser);
             this.Controls.Add(this.numericUpDown_refresh);
             this.Controls.Add(this.label_refresh);
             this.Controls.Add(this.groupBox_RAM);
@@ -163,5 +174,6 @@
         private System.Windows.Forms.Label label_RAM;
         private System.Windows.Forms.Label label_refresh;
         private System.Windows.Forms.NumericUpDown numericUpDown_refresh;
+        private System.Windows.Forms.Label label_loggedUser;
     }
 }

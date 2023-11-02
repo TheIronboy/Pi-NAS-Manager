@@ -45,6 +45,8 @@ namespace Pi_NAS_Manager
 
         private void Pi_NAS_Manager_Load(object sender, EventArgs e)
         {
+            label_loggedUser.Text += currentUser.Username;
+
             resourcesMonitor(sshClient);
         }
     }
