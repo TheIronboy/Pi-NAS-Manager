@@ -37,6 +37,7 @@
             this.label_refresh = new System.Windows.Forms.Label();
             this.numericUpDown_refresh = new System.Windows.Forms.NumericUpDown();
             this.label_loggedUser = new System.Windows.Forms.Label();
+            this.label_CPUTemp = new System.Windows.Forms.Label();
             this.groupBox_CPU.SuspendLayout();
             this.groupBox_RAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_refresh)).BeginInit();
@@ -44,6 +45,7 @@
             // 
             // groupBox_CPU
             // 
+            this.groupBox_CPU.Controls.Add(this.label_CPUTemp);
             this.groupBox_CPU.Controls.Add(this.label_CPU);
             this.groupBox_CPU.Controls.Add(this.progressBar_CPU);
             this.groupBox_CPU.Location = new System.Drawing.Point(12, 12);
@@ -58,9 +60,9 @@
             this.label_CPU.AutoSize = true;
             this.label_CPU.Location = new System.Drawing.Point(6, 24);
             this.label_CPU.Name = "label_CPU";
-            this.label_CPU.Size = new System.Drawing.Size(33, 13);
+            this.label_CPU.Size = new System.Drawing.Size(21, 13);
             this.label_CPU.TabIndex = 1;
-            this.label_CPU.Text = "100%";
+            this.label_CPU.Text = "0%";
             // 
             // progressBar_CPU
             // 
@@ -86,9 +88,9 @@
             this.label_RAM.AutoSize = true;
             this.label_RAM.Location = new System.Drawing.Point(6, 24);
             this.label_RAM.Name = "label_RAM";
-            this.label_RAM.Size = new System.Drawing.Size(33, 13);
+            this.label_RAM.Size = new System.Drawing.Size(21, 13);
             this.label_RAM.TabIndex = 4;
-            this.label_RAM.Text = "100%";
+            this.label_RAM.Text = "0%";
             // 
             // progressBar_RAM
             // 
@@ -101,7 +103,7 @@
             // label_refresh
             // 
             this.label_refresh.AutoSize = true;
-            this.label_refresh.Location = new System.Drawing.Point(332, 12);
+            this.label_refresh.Location = new System.Drawing.Point(332, 31);
             this.label_refresh.Name = "label_refresh";
             this.label_refresh.Size = new System.Drawing.Size(115, 13);
             this.label_refresh.TabIndex = 6;
@@ -109,7 +111,7 @@
             // 
             // numericUpDown_refresh
             // 
-            this.numericUpDown_refresh.Location = new System.Drawing.Point(453, 10);
+            this.numericUpDown_refresh.Location = new System.Drawing.Point(453, 29);
             this.numericUpDown_refresh.Maximum = new decimal(new int[] {
             10,
             0,
@@ -132,11 +134,20 @@
             // label_loggedUser
             // 
             this.label_loggedUser.AutoSize = true;
-            this.label_loggedUser.Location = new System.Drawing.Point(332, 41);
+            this.label_loggedUser.Location = new System.Drawing.Point(332, 12);
             this.label_loggedUser.Name = "label_loggedUser";
             this.label_loggedUser.Size = new System.Drawing.Size(63, 13);
             this.label_loggedUser.TabIndex = 8;
             this.label_loggedUser.Text = "Logged as: ";
+            // 
+            // label_CPUTemp
+            // 
+            this.label_CPUTemp.AutoSize = true;
+            this.label_CPUTemp.Location = new System.Drawing.Point(38, 0);
+            this.label_CPUTemp.Name = "label_CPUTemp";
+            this.label_CPUTemp.Size = new System.Drawing.Size(22, 13);
+            this.label_CPUTemp.TabIndex = 3;
+            this.label_CPUTemp.Text = "0\'C";
             // 
             // Pi_NAS_Manager
             // 
@@ -175,5 +186,6 @@
         private System.Windows.Forms.Label label_refresh;
         private System.Windows.Forms.NumericUpDown numericUpDown_refresh;
         private System.Windows.Forms.Label label_loggedUser;
+        private System.Windows.Forms.Label label_CPUTemp;
     }
 }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,7 @@ namespace Pi_NAS_Manager
 {
     public partial class Pi_NAS_Manager : Form
     {
-        public User currentUser {  get; set; }
+        public User currentUser { get; set; }
 
         public SshClient sshClient { get; set; }
 
@@ -23,31 +24,41 @@ namespace Pi_NAS_Manager
             InitializeComponent();
         }
 
-        public async void resourcesMonitor(SshClient sshClient)
-        {
-            while (true)
-            {
-                SshCommand CPULoad = sshClient.CreateCommand("mpstat 1 1 | awk '$12 ~ /[0-9.]+/ {usage = 100 - $12} END {print int(usage)}'");
-                CPULoad.Execute();
-
-                label_CPU.Text = CPULoad.Result.Replace("\n", String.Empty) + "%";
-                progressBar_CPU.Value = Convert.ToInt32(CPULoad.Result);
-
-                SshCommand RAMLoad = sshClient.CreateCommand("free | awk 'FNR == 2 {printf(\"%.0f\\n\", ($3/$2) * 100)}'\r\n");
-                RAMLoad.Execute();
-
-                label_RAM.Text = RAMLoad.Result.Replace("\n", String.Empty) + "%";
-                progressBar_RAM.Value = Convert.ToInt32(RAMLoad.Result);
-
-                await Task.Delay((int)numericUpDown_refresh.Value * 1000);
-            }
-        }
-
         private void Pi_NAS_Manager_Load(object sender, EventArgs e)
         {
             label_loggedUser.Text += currentUser.Username;
 
-            resourcesMonitor(sshClient);
+            SshCommand CPULoadCommand = sshClient.CreateCommand("top -n 1 -b | grep '%Cpu(s)' | awk '{printf \"%d\\n\", 100 - $8}'");
+            SshCommand CPUTempCommand = sshClient.CreateCommand("vcgencmd measure_temp | sed 's/temp=//'");
+            SshCommand RAMLoadCommand = sshClient.CreateCommand("free | awk 'FNR == 2 {printf(\"%.0f\\n\", ($3/$2) * 100)}'");
+
+            Task.Run(async() =>
+            {
+                while (true)
+                {
+                    CPULoadCommand.Execute();
+                    int CPULoad = Convert.ToInt32(CPULoadCommand.Result);
+
+                    CPUTempCommand.Execute();
+                    string CPUTemp = CPUTempCommand.Result;
+
+                    RAMLoadCommand.Execute();
+                    int RAMLoad = Convert.ToInt32(RAMLoadCommand.Result);
+
+                    Invoke((Action)(() =>
+                    {
+                        label_CPU.Text = CPULoad + "%";
+                        progressBar_CPU.Value = CPULoad;
+
+                        label_CPUTemp.Text = CPUTemp;
+
+                        label_RAM.Text = RAMLoad + "%";
+                        progressBar_RAM.Value = RAMLoad;
+                    }));
+
+                    await Task.Delay((int)numericUpDown_refresh.Value * 1000);
+                }
+            });
         }
     }
 }

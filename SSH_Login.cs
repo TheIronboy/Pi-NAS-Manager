@@ -14,7 +14,7 @@ namespace Pi_NAS_Manager
             InitializeComponent();
         }
 
-        string sessionFilePath = "session.txt";
+        public string sessionFilePath = "session.txt";
 
         private void SSH_Login_Load(object sender, EventArgs e)
         {
@@ -49,7 +49,6 @@ namespace Pi_NAS_Manager
             }
 
             User currentUser = new User(textBox_ip.Text, textBox_username.Text, textBox_password.Text, checkBox_remember.Checked);
-
             SshClient sshClient = new SshClient(currentUser.IP, currentUser.Username, currentUser.Password);
 
             if (checkBox_remember.Checked)
