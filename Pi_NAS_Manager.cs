@@ -1,4 +1,5 @@
-﻿using Renci.SshNet;
+﻿using Pi_NAS_Manager.Properties;
+using Renci.SshNet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,29 @@ namespace Pi_NAS_Manager
             InitializeComponent();
         }
 
+        public async void resourcesMonitor(SshClient sshClient)
+        {
+            while (true)
+            {
+                SshCommand CPULoad = sshClient.CreateCommand("mpstat 1 1 | awk '$12 ~ /[0-9.]+/ {usage = 100 - $12} END {print int(usage)}'");
+                CPULoad.Execute();
+
+                label_CPU.Text = CPULoad.Result.Replace("\n", String.Empty) + "%";
+                progressBar_CPU.Value = Convert.ToInt32(CPULoad.Result);
+
+                SshCommand RAMLoad = sshClient.CreateCommand("free | awk 'FNR == 2 {printf(\"%.0f\\n\", ($3/$2) * 100)}'\r\n");
+                RAMLoad.Execute();
+
+                label_RAM.Text = RAMLoad.Result.Replace("\n", String.Empty) + "%";
+                progressBar_RAM.Value = Convert.ToInt32(RAMLoad.Result);
+
+                await Task.Delay((int)numericUpDown_refresh.Value * 1000);
+            }
+        }
+
         private void Pi_NAS_Manager_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Username: " + currentUser.Username + Environment.NewLine + "Is Connected: " + sshClient.IsConnected.ToString());
+            resourcesMonitor(sshClient);
         }
     }
 }

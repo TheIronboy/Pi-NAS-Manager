@@ -40,9 +40,9 @@ namespace Pi_NAS_Manager
             {
                 if (control is TextBox textBox)
                 {
-                    if (textBox.Text == "")
+                    if (textBox.Text == String.Empty)
                     {
-                        MessageBox.Show("Riempi tutti i campi.");
+                        MessageBox.Show("Fill all textboxes.");
                         return;
                     }
                 }
@@ -76,7 +76,7 @@ namespace Pi_NAS_Manager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERRORE: " + ex.Message);
+                MessageBox.Show("ERROR: " + ex.Message);
             }
         }
     }
