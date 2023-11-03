@@ -84,6 +84,7 @@
             this.button_clearConsoleOutput.TabIndex = 18;
             this.button_clearConsoleOutput.Text = "Clear";
             this.button_clearConsoleOutput.UseVisualStyleBackColor = true;
+            this.button_clearConsoleOutput.Click += new System.EventHandler(this.button_clearConsoleOutput_Click);
             // 
             // richTextBox_consoleOutput
             // 
@@ -102,6 +103,7 @@
             this.button_sendCommand.TabIndex = 17;
             this.button_sendCommand.Text = "Send";
             this.button_sendCommand.UseVisualStyleBackColor = true;
+            this.button_sendCommand.Click += new System.EventHandler(this.button_sendCommand_Click);
             // 
             // textBox_consoleInput
             // 
