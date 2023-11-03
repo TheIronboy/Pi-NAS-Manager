@@ -30,7 +30,6 @@
         {
             this.label_refresh = new System.Windows.Forms.Label();
             this.groupBox_console = new System.Windows.Forms.GroupBox();
-            this.button_clearConsoleOutput = new System.Windows.Forms.Button();
             this.richTextBox_consoleOutput = new System.Windows.Forms.RichTextBox();
             this.button_sendCommand = new System.Windows.Forms.Button();
             this.textBox_consoleInput = new System.Windows.Forms.TextBox();
@@ -65,7 +64,6 @@
             // 
             // groupBox_console
             // 
-            this.groupBox_console.Controls.Add(this.button_clearConsoleOutput);
             this.groupBox_console.Controls.Add(this.richTextBox_consoleOutput);
             this.groupBox_console.Controls.Add(this.button_sendCommand);
             this.groupBox_console.Controls.Add(this.textBox_consoleInput);
@@ -76,28 +74,18 @@
             this.groupBox_console.TabStop = false;
             this.groupBox_console.Text = "Console SSH";
             // 
-            // button_clearConsoleOutput
-            // 
-            this.button_clearConsoleOutput.Location = new System.Drawing.Point(473, 580);
-            this.button_clearConsoleOutput.Name = "button_clearConsoleOutput";
-            this.button_clearConsoleOutput.Size = new System.Drawing.Size(75, 23);
-            this.button_clearConsoleOutput.TabIndex = 18;
-            this.button_clearConsoleOutput.Text = "Clear";
-            this.button_clearConsoleOutput.UseVisualStyleBackColor = true;
-            this.button_clearConsoleOutput.Click += new System.EventHandler(this.button_clearConsoleOutput_Click);
-            // 
             // richTextBox_consoleOutput
             // 
             this.richTextBox_consoleOutput.Location = new System.Drawing.Point(6, 19);
             this.richTextBox_consoleOutput.Name = "richTextBox_consoleOutput";
             this.richTextBox_consoleOutput.ReadOnly = true;
-            this.richTextBox_consoleOutput.Size = new System.Drawing.Size(542, 557);
+            this.richTextBox_consoleOutput.Size = new System.Drawing.Size(542, 558);
             this.richTextBox_consoleOutput.TabIndex = 15;
             this.richTextBox_consoleOutput.Text = "";
             // 
             // button_sendCommand
             // 
-            this.button_sendCommand.Location = new System.Drawing.Point(392, 580);
+            this.button_sendCommand.Location = new System.Drawing.Point(473, 581);
             this.button_sendCommand.Name = "button_sendCommand";
             this.button_sendCommand.Size = new System.Drawing.Size(75, 23);
             this.button_sendCommand.TabIndex = 17;
@@ -107,9 +95,9 @@
             // 
             // textBox_consoleInput
             // 
-            this.textBox_consoleInput.Location = new System.Drawing.Point(6, 582);
+            this.textBox_consoleInput.Location = new System.Drawing.Point(6, 583);
             this.textBox_consoleInput.Name = "textBox_consoleInput";
-            this.textBox_consoleInput.Size = new System.Drawing.Size(380, 20);
+            this.textBox_consoleInput.Size = new System.Drawing.Size(461, 20);
             this.textBox_consoleInput.TabIndex = 16;
             // 
             // groupBox_CPU
@@ -287,7 +275,6 @@
 
         private System.Windows.Forms.Label label_refresh;
         private System.Windows.Forms.GroupBox groupBox_console;
-        private System.Windows.Forms.Button button_clearConsoleOutput;
         private System.Windows.Forms.RichTextBox richTextBox_consoleOutput;
         private System.Windows.Forms.Button button_sendCommand;
         private System.Windows.Forms.TextBox textBox_consoleInput;

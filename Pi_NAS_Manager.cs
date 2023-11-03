@@ -136,10 +136,5 @@ namespace Pi_NAS_Manager
             shellStream.WriteLine(textBox_consoleInput.Text);
             textBox_consoleInput.Clear();
         }
-
-        private void button_clearConsoleOutput_Click(object sender, EventArgs e)
-        {
-            //più difficile del previsto se vuoi farlo bene
-        }
     }
 }
